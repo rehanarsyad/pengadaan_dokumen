@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('surats', function (Blueprint $table){
-            $table->timestamp('verified_at')->nullable();
-            $table->string('tipe_surat')->nullable();
+        Schema::create('documents', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('no_document');
+            $table->integer('id_template');
+            $table->json('data');
+            $table->string('fileName');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('table_document');
     }
 };

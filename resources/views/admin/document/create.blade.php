@@ -12,7 +12,7 @@
             </div>
             <div class="mt-4 sm:mt-0 w-full sm:w-1/2 sm:text-right">
                 <x-teal-button-link href="{{ route('document') }}">
-                    Kembali ke daftar surat
+                    <i class="bi bi-arrow-left-square mr-2"></i> Back
                 </x-teal-button-link>
             </div>
         </div>

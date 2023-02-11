@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Document;
 use Illuminate\Http\Request;
 
 class DokumenController extends Controller
@@ -13,7 +14,17 @@ class DokumenController extends Controller
      */
     public function index()
     {
-        return view('admin.document.index');
+        return view('admin.document.index', [
+            'documents' => Document::latest()->get()
+        ]);
+    }
+
+    public function download($file_name)
+    {
+        // return back()->with();
+        return response()->download(storage_path('app/public/' . $file_name));
+
+        return redirect()->back();
     }
 
     /**
@@ -56,7 +67,9 @@ class DokumenController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.document.edit', [
+            'document' => Document::query()->where('id', $id)->first()
+        ]);
     }
 
     /**

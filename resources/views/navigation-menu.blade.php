@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        PENGADAAN DOKUMEN
+                        PeDoKu
                     </a>
                 </div>
 
@@ -18,14 +18,14 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('surat') }}" :active="request()->routeIs('surat')">
-                        {{ __('Surat') }}
+                    <x-nav-link href="{{ route('document') }}" :active="request()->routeIs('document')">
+                        {{ __('Dokumen') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('document') }}" :active="request()->routeIs('document')">
-                        {{ __('Dokumen') }}
+                    <x-nav-link href="{{ route('matrix') }}" :active="request()->routeIs('matrix')">
+                        {{ __('Matrix') }}
                     </x-nav-link>
                 </div>
 
